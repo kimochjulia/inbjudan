@@ -82,28 +82,38 @@
       background-color: #99b0d4;
     }
 
- .gif-container {
-      display: inline-block;
-      margin: 10px;
-      cursor: pointer;
-      position: relative;
-    }
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .info-box {
-      display: none;
-      position: absolute;
-      bottom: -70px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(0,0,0,0.8);
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      width: 200px;
-      text-align: center;
-      z-index: 10;
-    }
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
 
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+  }
 
   </style>
 </head>
@@ -151,10 +161,6 @@
   Vi vill veta om du har någon specialkost eller någon allergi <br>
   Du får gärna skriva om du vill ha tips på boende i Göteborg </p>
 
-<div class="gif-container" onclick="toggleInfo(this)">
-  <img src=https://pixabay.com/gifs/queen-hearts-card-playing-game-20209/" alt="Katt GIF" width="200">
-  <div class="info-box"> Hej kompis!</div>
-</div>
 
 <h2> Vill du hålla tal eller uppträda på festen?</h2>
 
@@ -181,6 +187,16 @@
     
    <p> Valfri donation till palestinagrupperna, Swish 1233467800</p>
 
+   <div class="gif-container" onclick="openPopup('Här dansar någon glatt!')">
+  <img src="heart.gif" alt="Dans GIF" width="200">
+</div>
+
+<div id="popup" class="popup-overlay" onclick="closePopup(event)">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup(event)">&times;</span>
+    <p id="popup-text"></p>
+  </div>
+</div>
 
   <div class="section">
     <h2>Lämna ett meddelande i vår digitala gästbok</h2>
@@ -235,6 +251,19 @@
     } else {
       console.warn('Cursor-effects kunde inte laddas. Kontrollera nätverk eller CDN-URL.');
     }
+
+    function openPopup(message) {
+    document.getElementById('popup-text').textContent = message;
+    document.getElementById('popup').style.display = 'flex';
+  }
+
+  function closePopup(event) {
+    // Stäng om man klickar på bakgrunden eller på krysset
+    if (event.target.classList.contains('popup-overlay') || 
+        event.target.classList.contains('close-btn')) {
+      document.getElementById('popup').style.display = 'none';
+    }
+  }
   </script>
 
 </body>
