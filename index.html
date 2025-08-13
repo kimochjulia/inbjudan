@@ -1,82 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ditt digitala inbjudningskort </title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ditt digitala inbjudningskort</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts: Fraunces -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <style>
-       body {
-            font-family: 'Fraunces', serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f0f8ff;
-        }
+    body {
+      font-family: 'Fraunces', serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f8ff;
+    }
 
-        img {
-            max-width: 80%;
-            height: auto;
-        }
+    img {
+      max-width: 80%;
+      height: auto;
+    }
 
-        h1 {
-            font-weight: 700;
-        }
+    h1, h2 {
+      font-weight: 700;
+    }
 
-        p {
-            font-weight: 400;
-        }
-        .section {
-            background: rgba(255,255,255,0.8);
-            margin: 20px auto;
-            padding: 20px;
-            border: 2px dashed #b4c8e6;
-            border-radius: 10px;
-            width: 80%;
-        }
+    p {
+      font-weight: 400;
+    }
 
-        #guestbook-messages {
-            text-align: left;
-            margin-top: 10px;
-            max-height: 200px;
-            overflow-y: auto;
-        }
+    .section {
+      background: rgba(255,255,255,0.8);
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px dashed #b4c8e6;
+      border-radius: 10px;
+      width: 80%;
+    }
 
-        audio {
-            margin-top: 10px;
-        }
+    #guestbook-messages {
+      text-align: left;
+      margin-top: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
 
-        footer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #555;
-            margin-top: 40px;
-        }
+    audio {
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 40px;
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #b4c8e6;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #99b0d4;
+    }
   </style>
 </head>
 <body>
-  <BR>
-  <BR>
-  <BR>
-  <BR>
-  <img src="church.gif" alt="Valkommen GIF">
-<BR>
-  <BR>
-  <BR>
-  <h2> Vigsel </h2>
-  <BR>
-  <BR>
-  <p> Vigseln sker i Masthuggskyrkan den 8/8 2026 kl 13. </p>
-  <BR>
-  <p> Masthuggskyrkan ligger centralt i Göteborg. <BR> För att hitta hit tar du dig enklast med kollektivtrafik till Stigbergstorget och promenerar. <BR> Det finns parkeringsplatser i närheten. <BR> Var gärna på plats en stund innan vigseln</p>
+
+  <img src="church.gif" alt="Välkommen GIF">
+
+  <h2>Vigsel</h2>
+  <p>Vigseln sker i Masthuggskyrkan den 8/8 2026 kl 13.</p>
+  <p>Masthuggskyrkan ligger centralt i Göteborg.<br>
+     För att hitta hit tar du dig enklast med kollektivtrafik till Stigbergstorget och promenerar.<br>
+     Det finns parkeringsplatser i närheten.<br>
+     Var gärna på plats en stund innan vigseln.</p>
+
   <div class="section">
     <audio id="bg-music" src="music.mp3" autoplay loop controls></audio>
   </div>
+
   <div class="section">
-    <h2> Lämna ett meddelande i vår digitala gästbok  </h2>
-    <h4> (Men om du har frågor är det bäst att skriva till oss direkt)</h4>
+    <h2>Lämna ett meddelande i vår digitala gästbok</h2>
+    <h4>(Men om du har frågor är det bäst att skriva till oss direkt)</h4>
     <form id="guestbook-form">
       <input type="text" id="guest-name" placeholder="Ditt namn" required>
       <input type="text" id="guest-message" placeholder="Ditt meddelande" required>
@@ -84,13 +104,12 @@
     </form>
     <div id="guestbook-messages"></div>
   </div>
-  <div class="section">
-  </div>
-  <footer>
-    <p> Sidan är kodad av Julia 2025 :-) </p>
-  </footer>
-  <script>
 
+  <footer>
+    <p>Sidan är kodad av Julia 2025 :-)</p>
+  </footer>
+
+  <script>
     // Gästbok
     const form = document.getElementById('guestbook-form');
     const messagesDiv = document.getElementById('guestbook-messages');
@@ -116,13 +135,15 @@
       renderMessages();
     });
   </script>
-    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
   <script>
     if (window.cursoreffects && typeof window.cursoreffects.bubbleCursor === 'function') {
       new cursoreffects.bubbleCursor();
     } else {
-      console.warn('cursor-effects kunde inte laddas. Kontrollera nätverk eller CDN-URL.');
+      console.warn('Cursor-effects kunde inte laddas. Kontrollera nätverk eller CDN-URL.');
     }
   </script>
+
 </body>
 </html>
