@@ -19,6 +19,14 @@
       background-color: #fcfcfc;
     }
 
+    h2 {
+    cursor: pointer; 
+    }
+
+    p {
+    display: none; 
+    }
+
     img {
       max-width: 80%;
       height: auto;
@@ -169,10 +177,29 @@
   </div>
 
   <footer>
-    <p>Sidan kodad av Julia 2025 :-)</p>
+    <p>Koden till den här hemsidan skrevs av Julia 2025 :-) </p>
   </footer>
 
   <script>
+
+const headers = document.querySelectorAll('h2');
+
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      // nästa element direkt efter rubriken
+      const next = header.nextElementSibling;
+
+      // Om nästa element är ett p (paragraf), visa/dölj det
+      if(next && next.tagName.toLowerCase() === 'p') {
+        if(next.style.display === 'none' || next.style.display === '') {
+          next.style.display = 'block';
+        } else {
+          next.style.display = 'none';
+        }
+      }
+    });
+  });
+
     // Gästbok
     const form = document.getElementById('guestbook-form');
     const messagesDiv = document.getElementById('guestbook-messages');
