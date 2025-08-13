@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bröllop </title>
+  <link rel="icon" href="hemsida/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Playfair Display', serif; background: #d1e0c2; margin: 0; padding: 0; text-align: center; }
+    h1 { color: #16010c; }
+    h4 { color: #16010c; }
+    .section { background: rgba(255,255,255,0.8); margin: 20px auto; padding: 20px; border: 2px dashed #b4c8e6; border-radius: 10px; width: 80%; }
+    #guestbook-messages { text-align: left; margin-top: 10px; max-height: 200px; overflow-y: auto; }
+    audio { margin-top: 10px; }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Välkommen till vårt bröllop! </h1>
+<BR>
+  <h4>Här på sidan hittar ni all information om vårt börllop </h4>
+  <BR>
+    <BR>
+  <p>Vigseln sker den 8/8 2026 i Masthuggskyrkan i Göteborg.</p>
+  <div class="section">
+    <audio id="bg-music" src="music.mp3" autoplay loop controls></audio>
+  </div>
+  <div class="section">
+    <h2> Gästbok</h2>
+    <form id="guestbook-form">
+      <input type="text" id="guest-name" placeholder="Ditt namn" required>
+      <input type="text" id="guest-message" placeholder="Ditt meddelande" required>
+      <button type="submit">Lägg till</button>
+    </form>
+    <div id="guestbook-messages"></div>
+  </div>
+  <div class="section">
+  </div>
+  <footer>
+    <p> Sidan är kodad av Julia 2025 :-) All kod finns på Github </p>
+  </footer>
+  <script>
+
+    // Gästbok
+    const form = document.getElementById('guestbook-form');
+    const messagesDiv = document.getElementById('guestbook-messages');
+    let messages = JSON.parse(localStorage.getItem('guestbook')) || [];
+
+    function renderMessages() {
+      messagesDiv.innerHTML = '';
+      messages.forEach(m => {
+        const p = document.createElement('p');
+        p.textContent = `${m.name}: ${m.message}`;
+        messagesDiv.appendChild(p);
+      });
+    }
+    renderMessages();
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('guest-name').value;
+      const message = document.getElementById('guest-message').value;
+      messages.push({ name, message });
+      localStorage.setItem('guestbook', JSON.stringify(messages));
+      form.reset();
+      renderMessages();
+    });
+  </script>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+  <script>
+    if (window.cursoreffects && typeof window.cursoreffects.bubbleCursor === 'function') {
+      new cursoreffects.bubbleCursor();
+    } else {
+      console.warn('cursor-effects kunde inte laddas. Kontrollera nätverk eller CDN-URL.');
+    }
+  </script>
+</body>
+</html>
