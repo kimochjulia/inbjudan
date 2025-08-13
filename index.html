@@ -81,6 +81,30 @@
     button:hover {
       background-color: #99b0d4;
     }
+
+ .gif-container {
+      display: inline-block;
+      margin: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .info-box {
+      display: none;
+      position: absolute;
+      bottom: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0,0,0,0.8);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      width: 200px;
+      text-align: center;
+      z-index: 10;
+    }
+
+
   </style>
 </head>
 <body>
@@ -127,10 +151,14 @@
   Vi vill veta om du har någon specialkost eller någon allergi <br>
   Du får gärna skriva om du vill ha tips på boende i Göteborg </p>
 
-   
-    <h2> Vill du hålla tal eller uppträda på festen?</h2>
-    
-   <p> Vad roligt! Kontakta Ebba och Thyra på mejl</p>
+<div class="gif-container" onclick="toggleInfo(this)">
+  <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Katt GIF" width="200">
+  <div class="info-box"> Hej kompis!</div>
+</div>
+
+<h2> Vill du hålla tal eller uppträda på festen?</h2>
+
+<p> Vad roligt! Kontakta Ebba och Thyra på mejl</p>
 
   <img src="heart.gif" alt="Heart GIF">
 
@@ -193,6 +221,11 @@
       form.reset();
       renderMessages();
     });
+
+    function toggleInfo(container) {
+      const infoBox = container.querySelector('.info-box');
+      infoBox.style.display = infoBox.style.display === 'block' ? 'none' : 'block';
+    }
   </script>
 
   <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
