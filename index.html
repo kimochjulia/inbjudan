@@ -37,14 +37,13 @@
       margin-bottom: 20px;
     }
 
-    /* Horisontella rubriker */
     .nav-headings {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
+  display: flex;
+  flex-direction: column; /* staplar dem lodrätt */
+  align-items: center;    /* centrerar dem horisontellt */
+  gap: 10px;              /* avstånd mellan rubrikerna */
+  margin-bottom: 30px;
+}
 
     .nav-headings h2 {
       font-family: 'Playwrite MX Guides', sans-serif;
