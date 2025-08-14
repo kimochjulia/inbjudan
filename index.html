@@ -194,21 +194,14 @@
 
 const headers = document.querySelectorAll('h2');
 
-  headers.forEach(header => {
-    header.addEventListener('click', () => {
-      // nästa element direkt efter rubriken
-      const next = header.nextElementSibling;
-
-      // Om nästa element är ett p (paragraf), visa/dölj det
-      if(next && next.tagName.toLowerCase() === 'p') {
-        if(next.style.display === 'none' || next.style.display === '') {
-          next.style.display = 'block';
-        } else {
-          next.style.display = 'none';
-        }
-      }
-    });
+headers.forEach(header => {
+  header.addEventListener('click', () => {
+    const next = header.nextElementSibling;
+    if (next && next.classList.contains('toggle-text')) {
+      next.style.display = next.style.display === 'block' ? 'none' : 'block';
+    }
   });
+});
 
     // Gästbok
     const form = document.getElementById('guestbook-form');
