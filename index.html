@@ -131,31 +131,43 @@
     </audio>
   </div>
 
-  <!-- Rubriker i rad -->
-  <div class="nav-headings">
-    <h2>Vigsel</h2>
-    <h2>Mottagning & fest</h2>
-    <h2>Vill du komma?</h2>
-    <h2>Vill du hålla tal eller uppträda?</h2>
-    <h2>Klädkod?</h2>
-    <h2>Barn?</h2>
-    <h2>Gåvor?</h2>
+ <div class="nav-headings">
+    <div class="section">
+      <h2>Välkommen hit</h2>
+      <div class="content">
+        <p>Här har vi samlat all information om vårt bröllop.<br>
+        Passa på att lyssna på lite musik medan du är här.<br>
+        Skriv gärna i den digitala gästboken längst ned på sidan.<br>
+        Klicka runt på rubrikerna för att lära dig mer om oss.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Vigsel</h2>
+      <div class="content">
+        <p>Vår vigsel kommer ske i Masthuggskyrkan den 8/8 2026 kl 13.<br>
+        Kom till kyrkan senast 15 minuter innan vigseln.<br>
+        Direkt efter vigseln samlas vi utanför kyrkan och skålar!</p>
+        <img src="masthuggs.ico" alt="Karta">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Mottagning & fest</h2>
+      <div class="content">
+        <p>Efter vigseln kommer vi ha en mottagning och fest.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Vill du komma?</h2>
+      <div class="content">
+        <p>Vigseln är öppen för alla och till den behöver man inte osa.<br>
+        Om du vill komma på festen önskar vi att du meddelar oss senast 30 april.<br>
+        Då vill vi gärna veta om du har någon specialkost eller allergi.</p>
+      </div>
+    </div>
   </div>
-
-  <!-- Text under rubriker -->
-  <p class="toggle-text">Vår vigsel kommer ske i Masthuggskyrkan den 8/8 2026 kl 13. Kom till kyrkan senast 12:45...</p>
-
-  <p class="toggle-text">Efter vigseln kommer vi ha en mottagning och fest.</p>
-
-  <p class="toggle-text">Hurra! Vigseln är öppen för alla och till den behöver man inte osa...</p>
-
-  <p class="toggle-text">Vad roligt! Håll det gärna kort. Kontakta våra toastmadamer Ebba och Thyra.</p>
-
-  <p class="toggle-text">Du får komma hur du vill! Vi kommer ha skjorta och klänning på oss.</p>
-
-  <p class="toggle-text">Alla barn är varmt välkomna både på vigsel och mottagning! Festlokalen ligger i anslutning till Slottskogen...</p>
-
-  <p class="toggle-text">Valfri donation till Palestinagrupperna, Swish 1233467800.</p>
 
   <!-- Gästbok -->
   <div class="section">
@@ -174,19 +186,11 @@
 
   <!-- JavaScript -->
   <script>
-    // Klickfunktion för rubriker
-    const headers = document.querySelectorAll('.nav-headings h2');
-    const texts = document.querySelectorAll('.toggle-text');
-
-    headers.forEach((header, index) => {
+    const headers = document.querySelectorAll('.section h2');
+    headers.forEach(header => {
       header.addEventListener('click', () => {
-        const targetText = texts[index];
-        if (targetText.style.display === 'block') {
-          targetText.style.display = 'none';
-        } else {
-          texts.forEach(t => t.style.display = 'none'); // stäng alla andra
-          targetText.style.display = 'block';
-        }
+        const content = header.nextElementSibling;
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
       });
     });
 
