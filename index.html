@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Franklin:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -27,6 +28,19 @@
     cursor: pointer; 
     }
 
+     h1, h2, h3 {
+        font-family: 'Playwrite MX Guides', sans-serif;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+        display: inline-block;
+        padding: 5px 10px;
+        }
+
+        h1:hover, h2:hover, h3:hover {
+            background-color: lightblue;
+        }
+
+
     p {
     display: none; 
     }
@@ -36,20 +50,11 @@
       height: auto;
     }
 
-    h1, h2 {
-      font-weight: 500;
-      transition: font-style 0.3s ease;
-    }
-
+  
     p, #guestbook-messages p {
       font-family: 'Libre Franklin', sans-serif;
       font-weight: 200;
       transition: font-style 0.3s ease;
-    }
-
-    /* Gör text kursiv vid hover */
-    h1:hover, h2:hover {
-      font-style: italic;
     }
 
     .section {
@@ -68,6 +73,7 @@
     }
 
     footer {
+      font-family: 'Fraunces', serif;
       text-align: center;
       font-style: italic
       font-size: 0.5rem;
