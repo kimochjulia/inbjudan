@@ -14,50 +14,61 @@
 
   <style>
     body {
-     font-family: 'Libre Franklin', sans-serif;
+      font-family: 'Libre Franklin', sans-serif;
       font-weight: 300;
-      transition: font-style 0.3s ease;
       background-color: #fcfcfc;
-    }
-
-    h2 {
-    cursor: pointer; 
-    }
-
-    h1 {
-    cursor: pointer; 
-    }
-
-     h1, h2, h3 {
-        font-family: 'Playwrite MX Guides', sans-serif;
-        font-weight: 700;
-        transition: background-color 0.3s ease;
-        display: inline-block;
-        padding: 5px 10px;
-        }
-
-        h1:hover, h2:hover, h3:hover {
-            background-color: rgb(174, 221, 243);
-            color: #000000;
-        }
-
-
-   .toggle-text {
-  display: none;
+      margin: 0;
+      padding: 0;
     }
 
     img {
       max-width: 80%;
       height: auto;
+      display: block;
+      margin: 20px auto;
     }
 
-  
-    p, #guestbook-messages p {
+    /* Musikspelaren */
+    .audio-player {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Horisontella rubriker */
+    .nav-headings {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .nav-headings h2 {
+      font-family: 'Playwrite MX Guides', sans-serif;
+      font-size: 1rem; /* mindre textstorlek */
+      font-weight: 700;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .nav-headings h2:hover {
+      background-color: rgb(174, 221, 243);
+      color: #000000;
+    }
+
+    /* Textstycken under rubriker */
+    .toggle-text {
+      display: none;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 20px;
       font-family: 'Libre Franklin', sans-serif;
       font-weight: 200;
-      transition: font-style 0.3s ease;
     }
 
+    /* Gästbok */
     .section {
       background: rgba(248, 248, 248, 0.8);
       margin: 20px auto;
@@ -71,15 +82,6 @@
       margin-top: 10px;
       max-height: 200px;
       overflow-y: auto;
-    }
-
-    footer {
-      font-family: 'Fraunces', serif;
-      text-align: center;
-      font-style: italic
-      font-size: 0.5rem;
-      color: #555;
-      margin-top: 40px;
     }
 
     input, button {
@@ -100,82 +102,57 @@
     button:hover {
       background-color: #99b0d4;
     }
+
+    footer {
+      font-family: 'Fraunces', serif;
+      text-align: center;
+      font-style: italic;
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
   </style>
 </head>
 <body>
 
-
+  <!-- Startbild -->
   <img src="kyrka.gif" alt="Välkommen GIF">
 
-<h2> Välkommen hit</h2> 
-<p> Här har vi samlat all information om vårt bröllop. <br>
-  Passa på att lyssna på lite musik medan du är här. <br>
-    Skriv gärna i den digitala gästboken längst ned på sidan. <br>
-    Klicka runt på bilderna för att lära dig mer om oss </p>
-  
-  <div class="section">
-  <audio controls autoplay loop>
-    <source src="Love.mp3" type="audio/mpeg">
-  </audio>
-</div>
-<br>
-<h2> Vigsel</h2>
-
-<p class="toggle-text"> Vår vigsel kommer ske i Masthuggskyrkan den 8/8 2026 kl 13. <br>
-  Kom till kyrkan senast 15 minuter innan vigseln, dvs 12:45. <br>
-  Direkt efter vigseln samlas vi utanför kyrkan och skålar! <br>
-  Masthuggskyrkan är en vacker kyrka ritad av ... <br> 
-  Masthuggskyrkan ligger centralt i Göteborg.<br>
-  För att hitta hit tar du dig enklast med kollektivtrafik till Stigbergstorget och promenerar.<br>
-  Det finns parkeringsplatser i närheten. <br>
-    <img src="masthuggs.ico" alt="Karta"> </p>
-    <br>
-   <h2>Mottagning & fest</h2>
-
-    <p class="toggle-text"> Efter vigseln kommer vi ha en mottagning och fest. </p>
-    <br>
-    <h2> Vill du komma? </h2>
-
-<p class="toggle-text"> Hurra! </p> 
-  Vigseln är öppen för alla och till den behöver man inte osa. <br>
-  
-  Om du vill komma på festen önskar vi att du meddelar oss senast 30 april <br>
-
-  Då vill vi gärna veta om du har någon specialkost eller någon allergi <br>
-
-  Det går bra att kontakta oss på valfritt sätt (sms eller mejl, brev, "irl"). <br>
-
-  Du får gärna skriva om du vill ha tips på boende i Göteborg. </p>
-
-<h2> Vill du hålla tal eller uppträda på festen?</h2>
-
-<p class="toggle-text"> Vad roligt! Håll det gärna kort. Kontakta våra toastmadamer Ebba och Thyra på mejl</p>
-<br>
-   <h2>Klädkod?</h2>
-    
-   <p class="toggle-text"> Du får komma hur du vill! Vi kommer ha skjorta och klänning på oss. </p>
-
-
-   <h2>Barn?</h2>
-   <br> 
- <p class="toggle-text"> Alla barn är varmt välkomna både på vigsel och mottagning! <br> 
-
-    Festlokalen ligger i anslutning till Slottskogen. <br> 
-
-    Vi kommer ha barnvänliga aktiviteter och en lekledare utomhus om vädret tillåter. </p>
-   
-   <br>
-      <h2>Gåvor?</h2>
-    
-<p class="toggle-text">  Valfri donation till palestinagrupperna, Swish 1233467800</p>
-
-<div id="popup" class="popup-overlay" onclick="closePopup(event)">
-  <div class="popup-content">
-    <span class="close-btn" onclick="closePopup(event)">&times;</span>
-    <p id="popup-text"></p>
+  <!-- Musik -->
+  <div class="audio-player">
+    <audio controls autoplay loop>
+      <source src="Love.mp3" type="audio/mpeg">
+    </audio>
   </div>
-</div>
 
+  <!-- Rubriker i rad -->
+  <div class="nav-headings">
+    <h2>Vigsel</h2>
+    <h2>Mottagning & fest</h2>
+    <h2>Vill du komma?</h2>
+    <h2>Vill du hålla tal eller uppträda?</h2>
+    <h2>Klädkod?</h2>
+    <h2>Barn?</h2>
+    <h2>Gåvor?</h2>
+  </div>
+
+  <!-- Text under rubriker -->
+  <p class="toggle-text">Vår vigsel kommer ske i Masthuggskyrkan den 8/8 2026 kl 13. Kom till kyrkan senast 12:45. Direkt efter vigseln samlas vi utanför kyrkan och skålar! Masthuggskyrkan ligger centralt i Göteborg...</p>
+
+  <p class="toggle-text">Efter vigseln kommer vi ha en mottagning och fest.</p>
+
+  <p class="toggle-text">Hurra! Vigseln är öppen för alla och till den behöver man inte osa. Om du vill komma på festen, meddela oss senast 30 april...</p>
+
+  <p class="toggle-text">Vad roligt! Håll det gärna kort. Kontakta våra toastmadamer Ebba och Thyra på mejl.</p>
+
+  <p class="toggle-text">Du får komma hur du vill! Vi kommer ha skjorta och klänning på oss.</p>
+
+  <p class="toggle-text">Alla barn är varmt välkomna både på vigsel och mottagning! Festlokalen ligger i anslutning till Slottskogen...</p>
+
+  <p class="toggle-text">Valfri donation till Palestinagrupperna, Swish 1233467800.</p>
+
+  <!-- Gästbok -->
   <div class="section">
     <p>Lämna ett meddelande i vår digitala gästbok</p>
     <form id="guestbook-form">
@@ -190,18 +167,23 @@
     <p>Den här hemsidan kodades av bruden</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
+    // Klickfunktion för rubriker
+    const headers = document.querySelectorAll('.nav-headings h2');
+    const texts = document.querySelectorAll('.toggle-text');
 
-const headers = document.querySelectorAll('h2');
-
-headers.forEach(header => {
-  header.addEventListener('click', () => {
-    const next = header.nextElementSibling;
-    if (next && next.classList.contains('toggle-text')) {
-      next.style.display = next.style.display === 'block' ? 'none' : 'block';
-    }
-  });
-});
+    headers.forEach((header, index) => {
+      header.addEventListener('click', () => {
+        const targetText = texts[index];
+        if (targetText.style.display === 'block') {
+          targetText.style.display = 'none';
+        } else {
+          texts.forEach(t => t.style.display = 'none'); // stäng alla andra
+          targetText.style.display = 'block';
+        }
+      });
+    });
 
     // Gästbok
     const form = document.getElementById('guestbook-form');
@@ -227,33 +209,6 @@ headers.forEach(header => {
       form.reset();
       renderMessages();
     });
-
-    function toggleInfo(container) {
-      const infoBox = container.querySelector('.info-box');
-      infoBox.style.display = infoBox.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-
-  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
-  <script>
-    if (window.cursoreffects && typeof window.cursoreffects.bubbleCursor === 'function') {
-      new cursoreffects.bubbleCursor();
-    } else {
-      console.warn('Cursor-effects kunde inte laddas. Kontrollera nätverk eller CDN-URL.');
-    }
-
-    function openPopup(message) {
-    document.getElementById('popup-text').textContent = message;
-    document.getElementById('popup').style.display = 'flex';
-  }
-
-  function closePopup(event) {
-    // Stäng om man klickar på bakgrunden eller på krysset
-    if (event.target.classList.contains('popup-overlay') || 
-        event.target.classList.contains('close-btn')) {
-      document.getElementById('popup').style.display = 'none';
-    }
-  }
   </script>
 
 </body>
