@@ -238,16 +238,6 @@
     }
     renderMessages();
 
-<script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
-  <script>
-    if (window.cursoreffects && typeof window.cursoreffects.bubbleCursor === 'function') {
-      new cursoreffects.bubbleCursor();
-    } else {
-      console.warn('Cursor-effects kunde inte laddas. Kontrollera nätverk eller CDN-URL.');
-    }
-  </script>
-
-
     form.addEventListener('submit', e => {
       e.preventDefault();
       const name = document.getElementById('guest-name').value;
