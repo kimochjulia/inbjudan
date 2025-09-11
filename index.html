@@ -130,7 +130,6 @@
       <div class="content">
         <p>Här har vi samlat all information om vårt bröllop.<br>
         Passa på att lyssna på lite musik medan du är här.<br>
-        Skriv gärna i den digitala gästboken längst ned på sidan.<br>
         Klicka runt på rubrikerna för att lära dig mer om oss.</p>
       </div>
     </div>
@@ -226,32 +225,6 @@
         content.style.display = (content.style.display === 'block') ? 'none' : 'block';
       });
     });
-
-    // Gästbok
-    const form = document.getElementById('guestbook-form');
-    const messagesDiv = document.getElementById('guestbook-messages');
-    let messages = JSON.parse(localStorage.getItem('guestbook')) || [];
-
-    function renderMessages() {
-      messagesDiv.innerHTML = '';
-      messages.forEach(m => {
-        const p = document.createElement('p');
-        p.textContent = `${m.name}: ${m.message}`;
-        messagesDiv.appendChild(p);
-      });
-    }
-    renderMessages();
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const name = document.getElementById('guest-name').value;
-      const message = document.getElementById('guest-message').value;
-      messages.push({ name, message });
-      localStorage.setItem('guestbook', JSON.stringify(messages));
-      form.reset();
-      renderMessages();
-    });
-  </script>
 
   <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
   <script>
