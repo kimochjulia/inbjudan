@@ -34,7 +34,7 @@ img {
 }
 
 .section {
-  background-color: rgba(248, 248, 248, 0.8);
+  background-color: #ded8d1;
   margin: 15px auto 0 auto;
   padding: 20px;
   border-radius: 10px;
@@ -47,17 +47,12 @@ img {
 .nav-headings h2 {
   font-family: 'Playwrite MX Guides', sans-serif;
   color: #3b3844;
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: 400;
   padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 5px;
-}
-
-.nav-headings h2:hover {
-  background-color: #8ca7bf;
-  color: #fff;
 }
 
 .content {
