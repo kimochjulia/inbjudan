@@ -101,23 +101,23 @@ footer {
 }
 
 .content-wrapper {
-  display: flex;          /* Lägger sektion och gif på samma rad */
-  align-items: center;    /* Vertikal centrering */
-  gap: 20px;              /* Avstånd mellan text och gif */
+  display: flex;         
+  align-items: center;    
+  gap: 30px;             
 }
 
 .text-section {
-  flex: 1;                /* Textsektionen tar upp resterande utrymme */
+  flex: 1;               
 }
 
 .side-gif {
-  width: 200px;           /* Sätt bredd på din gif */
-  height: auto;           /* Behåller proportionerna */
+  width: 200px;         
+  height: auto;          
 }
 
 @media (max-width: 768px) {
   .content-wrapper {
-    flex-direction: column; /* GIF under texten på små skärmar */
+    flex-direction: column;
     align-items: flex-start;
   }
 }
