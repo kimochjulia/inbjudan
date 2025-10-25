@@ -41,7 +41,7 @@ img {
   width: 80%;
   max-width: 500px;
   text-align: center;
-  font-family: 'Source Sans 3', sans-serif; /* ← byt gärna till ditt nya typsnitt här */
+  font-family: 'Lora', sans-serif; 
 }
 
 .nav-headings h2 {
@@ -66,13 +66,12 @@ img {
   text-align: center;
   font-family: 'Source Sans 3', sans-serif;
   font-weight: 300;
-  line-height: 1.6; /* ← gör texten mer lättläst */
+  line-height: 1.6; 
 }
 
-/* ✨ NYTT: ge luft mellan stycken i sektioner */
 .section p {
-  margin-bottom: 1.5em; /* ← tomrad mellan stycken */
-  line-height: 1.6; /* ← lite mer radavstånd */
+  margin-bottom: 1.5em; 
+  line-height: 1.6; 
 }
 
 a {
@@ -85,7 +84,7 @@ a:hover {
 }
 
 footer {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Lora', sans-serif;
   text-align: center;
   font-style: italic;
   font-size: 0.8rem;
