@@ -45,7 +45,7 @@ img {
   padding: 20px;
   border-radius: 10px;
   width: 90%;
-  max-width: 700px;
+  max-width: 900px;
   text-align: center;
   font-family: 'Lora', serif; 
 }
@@ -98,4 +98,26 @@ footer {
   margin-top: auto;
   padding: 20px;
   background-color: #ded8d1;
+}
+
+.content-wrapper {
+  display: flex;          /* Lägger sektion och gif på samma rad */
+  align-items: center;    /* Vertikal centrering */
+  gap: 20px;              /* Avstånd mellan text och gif */
+}
+
+.text-section {
+  flex: 1;                /* Textsektionen tar upp resterande utrymme */
+}
+
+.side-gif {
+  width: 200px;           /* Sätt bredd på din gif */
+  height: auto;           /* Behåller proportionerna */
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* GIF under texten på små skärmar */
+    align-items: flex-start;
+  }
 }
