@@ -1,68 +1,88 @@
-/* Grundinställningar */
-* {
-  box-sizing: border-box;
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 100;
+  background-color: #ded8d1;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Wrapper och layout */
-.wrapper {
-  max-width: 940px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  padding: 10px;
+img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
 }
 
-/* Stil för rutorna */
-.wrapper > div {
-  border: 2px solid rgb(233 171 88);
-  border-radius: 5px;
-  background-color: rgb(233 171 88 / 50%);
-  padding: 1em;
-  color: #d9480f;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
+.icon {
+  width: 100px;
+}
+
+.audio-player {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Gridpositioner (desktop) */
-.one {
-  grid-column: 1 / 3;
-  grid-row: 1;
-}
-.two {
-  grid-column: 2 / 4;
-  grid-row: 1 / 3;
-}
-.three {
-  grid-column: 1;
-  grid-row: 2 / 5;
-}
-.four {
-  grid-column: 3;
-  grid-row: 3;
-}
-.five {
-  grid-column: 2;
-  grid-row: 4;
-}
-.six {
-  grid-column: 3;
-  grid-row: 4;
+.nav-headings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
-/* Responsiv design för mobil */
-@media (max-width: 600px) {
-  .wrapper {
-    grid-template-columns: 1fr; /* En kolumn */
-  }
+.section {
+  background-color: rgba(248, 248, 248, 0.8);
+  margin: 15px auto 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+}
 
-  /* Låt rutorna staplas i naturlig ordning */
-  .one, .two, .three, .four, .five, .six {
-    grid-column: auto;
-    grid-row: auto;
-  }
+.nav-headings h2 {
+  font-family: 'Playwrite MX Guides', sans-serif;
+  color: #3b3844;
+  font-size: 2.2rem;
+  font-weight: 400;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.nav-headings h2:hover {
+  background-color: #8ca7bf;
+  color: #fff;
+}
+
+.content {
+  display: none;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 200;
+}
+
+a {
+  color: #2e7749;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  font-family: 'Fraunces', serif;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #2e7749;
+  margin-top: auto;
+  padding: 20px;
 }
