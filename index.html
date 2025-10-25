@@ -1,101 +1,204 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ett litet digitalt inbjudningskort</title>
   <link rel="icon" href="heart.ico" type="image/x-icon">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Franklin:wght@200&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap" rel="stylesheet">
 
- <!-- Länk till extern CSS -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 100;
+      background-color: #ded8d1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .audio-player {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .nav-headings {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 10px;              
+  margin-bottom: 30px;
+}
+ .content {
+      display: none; 
+      margin-bottom: 20px;
+    }
+    .nav-headings h2 {
+      font-family: 'Playwrite MX Guides', sans-serif;
+      color: #3b3844;
+      font-size: 3rem;
+      font-weight: 400;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .nav-headings h2:hover {
+      background-color: #8ca7bf(247, 251, 253);
+      color: #3b3844;
+    }
+
+    .toggle-text {
+      display: none;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-family: 'Fraunces', serif;
+      font-weight: 200;
+    }
+
+    .section {
+      background: #d3ce9f(248, 248, 248, 0.8);
+      margin: 15px auto 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      font-family: 'Fraunces', serif;
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #2e7749;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #f079c2fa;
+    }
+
+    footer {
+      font-family: 'Fraunces', serif;
+      text-align: center;
+      font-style: italic;
+      font-size: 0.8rem;
+      color: #2e7749;
+      margin-top: auto;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 
+
   <img src="header.gif" alt="Välkommen GIF">
-  
-<div class="section">
- <h2>Välkommen hit</h2>
+
+ <div class="nav-headings">
+    <div class="section">
+      <h2>Välkommen hit</h2>
       <div class="content">
         <p>Här har vi samlat all information om vårt bröllop.<br>
-        Passa på att lyssna på lite musik medan du är här.</p>
+        Passa på att lyssna på lite musik medan du är här.<br>
+        </p>
       </div>
     </div>
 
+  
   <div class="audio-player">
-      <audio controls autoplay loop>
-        <source src="Love.mp3" type="audio/mpeg">
-      </audio>
-    </div>
+    <audio controls autoplay loop>
+      <source src="Love.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 
- <div class="section">
+    <div class="section">
       <h2>Vigsel</h2>
       <div class="content">
-        <p>Vigseln kommer ske i Masthuggskyrkan kl 13 den 8/8 2026. Till Masthuggskyrkan tar man sig enklast från Stigbergstorgets spårvagnshållplats. 
-        Använd <a href="https://goteborg.se/wps/portal/start/trafik-och-resor/parkering/parkeringskartor" target="_blank">Göteborgs parkeringskarta</a> om ni färdas billedes. 
-        Var gärna i kyrkan tio minuter innan vigseln börjar.<br>
-        Vigseln är öppen för alla och till den behöver man inte osa.</p>
+        <p>Vigseln kommer ske i Masthuggskyrkan kl 13 den 8/8 2026. Till Masthuggskyrkan tar man sig enklast från Stigbergstorgets spårvagnshållplats. Använd Göteborgs stads parkeringskarta (https://goteborg.se/wps/portal/start/trafik-och-resor/parkering/parkeringskartor) om ni färdas billedes. Var gärna i kyrkan tio minuter innan vigseln börjar. <br>
+         Vigseln är öppen för alla och till den behöver man inte osa.<br> </p>
       </div>
     </div>
 
-   <img src="amor.ico" alt="Amor" class="icon">
+      <img src="amor.ico" alt="Amor">
 
     <div class="section">
       <h2>Mottagning & fest</h2>
       <div class="content">
-        <p>Vår mottagning kommer vara för de närmsta. Från kl 16 är ni välkomna på mottagning och fest på Kustens hus. Där blir både middag och dans.</p>
+        <p>Vår mottagning kommer vara för de närmsta. Från kl 16 är ni välkomna på mottagning och fest kommer vi ha fest på Kustens hus. </p>
+        <p>Där blir både middag och dans. </p>
       </div>
     </div>
 
-  <div class="section">
-      <h2>Anmäl om du kommer eller inte här</h2>
-      <div class="content">
-        <p>Om du vill komma på festen önskar vi att du meddelar oss senast 30 april.<br>
-        För att underlätta önskar vi att alla gäster fyller i formuläret, även om ni redan meddelat oss att ni kommer (till och med du Alfred!). Tack &lt;3<br>
-        Då vill vi gärna veta om du har någon specialkost eller allergi.<br>
-        <a href="https://docs.google.com/forms/d/1a37LV7cwQpsPoEp89kS6DPN7S2o-06JiF1qAFS_L0Zw/edit" target="_blank">OSA här!</a></p>
-      </div>
-    </div>
-
+   
     <div class="section">
-      <h2>Frågor & svar</h2>
+      <h2>OSA här</h2>
       <div class="content">
-        <p><strong>VILL DU HÅLLA TAL ELLER UPPTRÄDA?</strong><br>
-        Vad roligt! Kontakta våra toastmadamer Ebba och Thyra.<br><br>
+        <p>  Om du vill komma på festen önskar vi att du meddelar oss senast 30 april.<br>
+        För att underlätta för oss önskar vi att alla gäster fyller i formuläret, även om ni redan meddelat oss att ni kommer (till och med du Alfred!). Tack <3 <br> 
+        Då vill vi gärna veta om du har någon specialkost eller allergi. <br>
+        <a href="https://docs.google.com/forms/d/1a37LV7cwQpsPoEp89kS6DPN7S2o-06JiF1qAFS_L0Zw/edit" target="_blank">
+    OSA här!
+  </a>
+</p>  
 
-        <strong>KLÄDKOD?</strong><br>
-        Come as you are.<br><br>
-      
-        <strong>BARN?</strong><br>
-        Barn är välkomna på vigsel, mottagning och fest.<br><br>
-
-        <strong>GÅVOR?</strong><br>
-        Vi önskar inga saker!</p>
       </div>
     </div>
+   
+  <div class="section">
+      <h2> Frågor & svar </h2>
+     <div class="content">
+        <p> VILL DU HÅLLA TAL ELLER UPPTRÄDA? <br>
+          <br> Vad roligt! Kontakta våra toastmadamer Ebba och Thyra. <br>
+        KLÄDKOD? <br>
+        Come as you are. <br> 
+        BARN? <br> 
+        Barn är välkommna på vigsel, mottagning och fest. <br> 
+        GÅVOR? <br> 
+        Vi önskar inga saker! <br> </p>
+  </div>
+  </div>
 
+ 
    <div class="section">
       <h2>Digital gästbok!</h2>
-      <div class="content">
-        <p>Lämna ett meddelande här så kommer det upp på hemsidan.<br><br>
-        HÄR SAMLAR VI VÅRA GÖTEBORGS-TIPS:<br>
-        Biograf Aftonstjärnan, Slottsberget (utkiksplats), gamla Högsbo, Smithska udden för bad, Donsö, Amundön.</p>
-      </div>
-    </div>
-  
+     <div class="content">
+        <p> Lämna ett meddelande här så kommer det upp på hemsidan. <br>  
+        HÄR SAMLAR VI VÅRA GÖTEBORGS-TIPS <br> 
+        Biograf Aftonstjärnan, Slottsberget (utkiksplats), gamla Högsbo, Smithska udden för bad, Donsö, Amundön. </p> 
+  </div>
+</div>
+   
+
   </div>
 
   <footer>
     <p>Den här hemsidan kodades av bruden</p>
   </footer>
-  
-  
+
+  <!-- JavaScript -->
   <script>
     const headers = document.querySelectorAll('.section h2');
     headers.forEach(header => {
