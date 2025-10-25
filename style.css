@@ -41,7 +41,7 @@ img {
   width: 80%;
   max-width: 500px;
   text-align: center;
-  font-family: 'Fraunces', serif;
+  font-family: 'Source Sans 3', sans-serif; /* ← byt gärna till ditt nya typsnitt här */
 }
 
 .nav-headings h2 {
@@ -64,8 +64,15 @@ img {
   display: none;
   margin-top: 10px;
   text-align: center;
-  font-family: 'Fraunces', serif;
-  font-weight: 200;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 300;
+  line-height: 1.6; /* ← gör texten mer lättläst */
+}
+
+/* ✨ NYTT: ge luft mellan stycken i sektioner */
+.section p {
+  margin-bottom: 1.5em; /* ← tomrad mellan stycken */
+  line-height: 1.6; /* ← lite mer radavstånd */
 }
 
 a {
@@ -78,7 +85,7 @@ a:hover {
 }
 
 footer {
-  font-family: 'Fraunces', serif;
+  font-family: 'Source Sans 3', sans-serif;
   text-align: center;
   font-style: italic;
   font-size: 0.8rem;
