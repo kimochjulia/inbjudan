@@ -2,17 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    gap: 40px; 
-}
-
-.side-gif {
-    width: 50px; 
-    height: auto;
 
 body {
   font-family: 'Libre Franklin', sans-serif;
