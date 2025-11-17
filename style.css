@@ -27,7 +27,7 @@ img {
 }
 
 .side-gif {
-  max-width: 150px;
+  max-width: 300px;
 }
 
 .audio-player {
@@ -131,7 +131,7 @@ footer {
   }
 
   .side-gif {
-    display: none; 
+    max-width: 100px;
   }
 
   img {
