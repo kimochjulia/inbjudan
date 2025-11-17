@@ -62,7 +62,7 @@ img {
 .nav-headings h2 {
   font-family: 'Playwrite MX Guides', sans-serif;
   color: #3b3844;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 400;
   padding: 5px 10px;
   cursor: pointer;
@@ -70,10 +70,6 @@ img {
   transition: 0.2s ease;
 }
 
-.nav-headings h2:hover {
-  background-color: #ccc7c0; 
-  color: #3b3844; 
-}
 
 .content {
   display: none;
